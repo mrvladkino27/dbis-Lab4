@@ -1,0 +1,9 @@
+
+create_collection()
+Time 5.665 s
+
+data_to_DB()
+Time 55.06e+04 s s
+
+execute_query()
+Time 5.087 s
