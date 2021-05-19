@@ -5,13 +5,12 @@ import csv
 import time
 
 step = 10000
-Max_Amount_To_Upload = 55000
+Max_Amount_To_Upload = 150000
 
 @profile_time
 def create_collection():
     connection = Connect.get_connection()
     db = connection['Lab4']
-    # db.drop_collection('ZNO_result')
     collection = db['ZNO_result']
     print("IN_DB - ", collection.count_documents({}))
     print('='*100)
@@ -36,7 +35,7 @@ def data_to_DB(collection):
                 if IN_DB_ROWS < i and HEADER_CREATING_FLG:
                     if i <= Max_Amount_To_Upload:
                         row.append(year)
-                        # i, max_row_number = line_to_dict_list(header, row, i, step, max_row_number,year, collection)
+                        i, max_row_number = line_to_dict_list(header, row, i, step, max_row_number,year, collection)
                     else:
                         break
                 else:
